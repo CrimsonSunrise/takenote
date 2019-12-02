@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/note.css">
+    <link rel="stylesheet" type="text/css" href="./css/top.css">
     <link rel="stylesheet" href="./css/materialdesignicons.css">
     <title>Take Note</title>
 </head>
@@ -15,24 +16,60 @@
         
         <div id="main-container">
             
+            <div class="tab-top">
+                <input type="text" class="tninput user" id="user" spellcheck="false" placeholder="Usuário" autocomplete="off">
+                <input type="text" class="tninput name" id="name" spellcheck="false" placeholder="Nome" autofocus autocomplete="on">
+                <input type="text" class="tninput ip" id="ip" spellcheck="false" placeholder="IP" value="" autocomplete="off">
+                <input type="text" class="tninput hostname" id="hostname" spellcheck="false" placeholder="HostName" value="" autocomplete="off">
+                <input type="text" class="tninput ramal" id="ramal" spellcheck="false" placeholder="Ramal" autocomplete="off">
+                <input type="text" class="tninput chamado" id="chamado" spellcheck="false" placeholder="chamado aberto" autocomplete="off">
+                <div>
+                    <textarea class="tninput problem" id="problem" spellcheck="false" placeholder="Detalhe o problema"></textarea>
+                </div>
+                <div>
+                    
+                    <label for="following" class="tnlabel">
+                        Acompanhamento
+                        <input type="checkbox" class="following" name="following" id="following"/>
+                        <span class="checkmark"></span>
+                    </label>
+
+                    <div class="top-options">
+                        <div class="top-option erase">
+                            <span class="mdi mdi-delete"></span> Limpar
+                        </div>
+                        <div class="top-option save">
+                            <span class="mdi mdi-content-save"></span> Salvar
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
             <div class="tab-container">
-                <div class="tab-header urgente">
-                    <div class="header-text" contenteditable="true" spellcheck="false">Urgent</div>
+                <div class="tab-header today">
+                    <div class="header-text" contenteditable="true" spellcheck="false">hoje</div>
                     <div class="notes-counter"></div>
-                    <div class="tab-organize mdi mdi-view-module" onclick="organizeTab(this)"></div>
+                    <div class="tab-search active">
+                        <div class="search-icon mdi mdi-magnify"></div>
+                        <input class="tab-search-input" id="tab-search-input" spellcheck="false" placeholder="buscar nota" type="text" value="">
+                    </div>
+                    <div class="tab-organize mdi mdi-view-module hidden" onclick="organizeTab(this)"></div>
                     <div class="tab-toggle mdi mdi-minus" onclick="toggleTab(this)"></div>
                 </div>
                 <div class="tab-body active">
 
                     <div class="notes">
 
-                        <div class="note" data-width="200" onmouseover="noteMouseOver(this)" onmouseleave="noteMouseLeave(this)">
+                        <!-- <div class="note" data-width="250" data-flag="false" onmouseover="noteMouseOver(this)" onmouseleave="noteMouseLeave(this)">
                             <div class="note-header">
                                 <div class="note-title" contenteditable="true" spellcheck="false">RITM019548</div>
                                 <div class="note-options">
                                     <div class="note-options-upper">
-                                        <div class="note-option mdi mdi-minus toggle" onclick="toggleNoteBody(this)"></div>
-                                        <div class="note-option mdi mdi-cursor-move move" onmousedown="setMoveable(this)" onmouseup="unsetMoveable(this)"></div>
+                                        <div class="note-option mdi mdi-plus toggle" onclick="toggleNoteBody(this)"></div>
+                                        <div class="note-option mdi mdi-flag flag" onclick=""></div>
+                                        <div class="note-option mdi mdi-cursor-move move hidden" onmousedown="setMoveable(this)" onmouseup="unsetMoveable(this)"></div>
                                     </div>
                                     <div class="note-options-bottom">
                                             <div class="note-option mdi mdi-close close" onclick="closeNote(this)"></div>
@@ -40,23 +77,24 @@
                                 </div>
                             </div>
                             <div class="note-body">
+                                <div class="note-body-info"></div>
                                 <div class="note-body-text" onkeyup="normalizeWidth(this)" contenteditable="true" spellcheck="false">
                                     some info here
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         
 
                     </div>
 
                     <div class="tab-body-resize"></div>
 
-                    <div class="add-note mdi mdi-plus"></div>
+                    <div class="add-note mdi mdi-plus"><div></div></div>
 
                 </div>
             </div>
 
-            <div class="tab-container">
+            <div class="tab-container hidden">
                 <div class="tab-header">
                     <div class="header-text" contenteditable="true" spellcheck="false">Today</div>
                     <div class="notes-counter"></div>
@@ -67,36 +105,18 @@
                     
                     <div class="notes">
 
-                        <div class="note" data-width="200" onmouseover="noteMouseOver(this)" onmouseleave="noteMouseLeave(this)">
-                            <div class="note-header">
-                                <div class="note-title" contenteditable="true" spellcheck="false">RITM019548</div>
-                                <div class="note-options">
-                                    <div class="note-options-upper">
-                                        <div class="note-option mdi mdi-minus toggle" onclick="toggleNoteBody(this)"></div>
-                                        <div class="note-option mdi mdi-cursor-move move" onmousedown="setMoveable(this)" onmouseup="unsetMoveable(this)"></div>
-                                    </div>
-                                    <div class="note-options-bottom">
-                                            <div class="note-option mdi mdi-close close" onclick="closeNote(this)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="note-body">
-                                <div class="note-body-text" onkeyup="normalizeWidth(this)" contenteditable="true" spellcheck="false">
-                                    some info here
-                                </div>
-                            </div>
-                        </div>
+                        
                         
 
                     </div>
 
                     <div class="tab-body-resize"></div>
 
-                    <div class="add-note mdi mdi-plus"></div>
+                    <div class="add-note mdi mdi-plus"><div></div></div>
                 </div>
             </div>
 
-            <div class="tab-container">
+            <div class="tab-container hidden">
                 <div class="tab-header resolvido">
                     <div class="header-text" contenteditable="true" spellcheck="false">Done</div>
                     <div class="notes-counter"></div>
@@ -106,25 +126,7 @@
                 <div class="tab-body active">
                     <div class="notes">
 
-                        <div class="note" data-width="200" onmouseover="noteMouseOver(this)" onmouseleave="noteMouseLeave(this)">
-                            <div class="note-header">
-                                <div class="note-title" contenteditable="true" spellcheck="false">RITM019548</div>
-                                <div class="note-options">
-                                    <div class="note-options-upper">
-                                        <div class="note-option mdi mdi-minus toggle" onclick="toggleNoteBody(this)"></div>
-                                        <div class="note-option mdi mdi-cursor-move move" onmousedown="setMoveable(this)" onmouseup="unsetMoveable(this)"></div>
-                                    </div>
-                                    <div class="note-options-bottom">
-                                            <div class="note-option mdi mdi-close close" onclick="closeNote(this)"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="note-body">
-                                <div class="note-body-text" onkeyup="normalizeWidth(this)" contenteditable="true" spellcheck="false">
-                                    some info here
-                                </div>
-                            </div>
-                        </div>
+                        
                         
 
                     </div>
@@ -142,6 +144,7 @@
     <script src="./js/jquery-1.7.1.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/predefinitions.js"></script>
+    <script src="./js/tp.js"></script>
     <script>
         updateNoteCount();
         updateNotesColors(0);
