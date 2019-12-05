@@ -1,0 +1,172 @@
+.tab-top {
+    margin: 20px;
+    background-color: rgba(114, 96, 96, 0);
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 95%;
+    padding: 3px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.tninput {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline-color: white;
+    padding: 5px 10px;
+    color: rgba(238, 238, 238, 0.74);
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: Roboto;
+    margin-bottom: 4px;
+}
+
+.tninput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.tninput:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.user {
+    width: 100px;
+}
+
+.name {
+    width: 228px;
+}
+
+.ip {
+  color: rgb(230, 202, 43);
+  width: 164px;
+  /* rgb(43, 192, 230) */
+}
+
+.hostname {
+  width: 164px;
+  color: rgb(43, 192, 230)
+}
+
+.ramal {
+    width: 100px;
+}
+
+.problem {
+    position: relative;
+    width: 352px;
+    height: 200px;
+    max-width: 352px;
+    min-width: 352px;
+    min-height: 40px;
+    max-height: 704px;
+}
+
+.following {
+    
+}
+
+.tnlabel {
+    display: inline-block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+/* Hide the browser's default checkbox */
+.tnlabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 3px;
+    background-color: rgba(238, 238, 238, 0.199);
+}
+
+/* On mouse-over, add a grey background color */
+.tnlabel:hover input ~ .checkmark {
+    background-color: rgba(238, 238, 238, 0.3);
+}
+
+/* When the checkbox is checked, add a blue background */
+.tnlabel input:checked ~ .checkmark {
+    background-color: rgb(216, 134, 12);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.tnlabel input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.tnlabel .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.top-options {
+    text-align: right;
+}
+
+.top-option {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.678);
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.top-option span {
+    color: white;
+    font-size: 22px;
+}
+
+.top-option.save {
+    background-color: rgba(61, 141, 61, 0.8);
+}
+
+.top-option.save:hover {
+    background-color: rgb(45, 105, 45);
+}
+
+.top-option.erase {
+    background-color: rgba(185, 74, 89, 0.1);
+}
+
+.top-option.erase:hover {
+    background-color: rgb(160, 65, 77);
+}

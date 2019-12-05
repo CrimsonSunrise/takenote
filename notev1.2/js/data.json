@@ -1,0 +1,30 @@
+{
+    "tabs": [
+        {
+            "title": "URGENT",
+            "expanded": false,
+            "height": 150
+        },
+        {
+            "title": "TODAY",
+            "expanded": false,
+            "height": 150
+        },
+        {
+            "title": "DONE",
+            "expanded": false,
+            "height": 150
+        }
+    ],
+
+    "notes": [
+        {
+            "title": "algum titulo",
+            "body": "algum texto",
+            "belongsTo": 0,
+            "x": 100,
+            "y": 100,
+            "expanded": false
+        }
+    ] 
+}

@@ -1,0 +1,169 @@
+.notes {
+    background-color: transparent;
+    height: 100%;
+    margin: none;
+    padding: none;
+}
+
+.note {
+    transition: 0.2s all;
+    position: relative;
+    display: inline-block;
+    border-radius: 2px;
+    min-width: 250px;
+    margin: 3px;
+    z-index: 1;
+}
+
+.note.active {
+    transform: translateY(-10px);
+    z-index: 2 !important;
+    box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.6);
+}
+
+.note-header {
+    position: relative;
+    padding: 5px;
+    color: #EEE;
+    overflow: hidden;
+    background-color: white;
+}
+
+.note-title {
+    display: inline-block;
+    padding: 5px 10px;
+    outline-color: white;
+    margin-right: 65px;
+}
+
+.notes-counter {
+    display: inline-block;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.note-title:focus, .note-title:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.note-body {
+    position: absolute;
+    background-color: #EEE;
+    display: none;
+    width: 100%;
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.note-body-info {
+    padding: 5px;
+    margin: 5px;
+    color: #555;
+}
+
+.note-body-info span {
+    user-select: text;
+}
+
+.note-body-text {
+    padding: 5px;
+    margin: 5px;
+    color: #555;
+    outline-color: #444;
+}
+
+.note-body-text:focus {
+    background-color: rgba(255, 255, 255, 0.4)
+}
+
+.note-options {
+    transition: 0.1s all;
+    position: absolute;
+    width: 62px;
+    height: 30px;
+    background-color: transparent;
+    right: 5px;
+    top: 5px;
+}
+
+.note-options.active {
+    top: -30px;
+}
+
+.note-options-upper {
+	position: relative;
+	width: 62px;
+	height: 30px;
+	background-color: transparent;
+}
+
+.note-options-bottom {
+	position: relative;
+	width: 60px;
+	height: 30px;
+    background-color: transparent;
+    margin-top: 5px;
+}
+
+.note-option {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    float: right;
+    cursor: pointer;
+}
+
+.note-option.toggle {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.note-option.toggle:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.note-option.toggle:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.note-option.close {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: crimson;
+}
+
+.note-option.close:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: crimson;
+}
+
+.note-option.close:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: crimson;
+}
+
+.note-option.move {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+    margin-right: 2px;
+    cursor: move
+}
+
+.note-option.move:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.note-option.move:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: white;
+}
+
+.flag {
+    font-size: 22px;
+    right: 5px;
+    cursor: default;
+    color: rgba(255, 36, 36, 0.993)
+    /* color: rgb(255, 187, 0); */
+}
